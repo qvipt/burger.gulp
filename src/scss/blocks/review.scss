@@ -1,0 +1,72 @@
+.review__list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.review__item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;;
+    width: 25%;
+    height: 50%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    &:hover {
+        .review__hover {
+            transform: scale(.8);
+        }
+
+        .review__content {
+            opacity: 1;
+        }
+    }
+
+    @include tablets {
+        width: 50%;
+        height: 25%;
+    }
+}
+
+.review__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(#454545, .7);
+    opacity: 0;   
+    display: flex;
+    align-items: center; 
+}
+
+.review__hover {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.review__title {
+    font-family: 'Gagalin';
+    color: white;
+    margin-bottom: rem(28px);
+}
+
+.review__text {
+    color: white;
+    margin-bottom: rem(18px);
+}
+
+.review__more {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: rem(13px);
+    font-weight: 700;
+    padding: rem(11px) rem(13px);
+    background: #2f3234;
+}

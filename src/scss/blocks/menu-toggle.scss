@@ -1,0 +1,14 @@
+.menu-toggle {
+    position: fixed;
+    top: rem(28px);
+    right: rem(30px);
+    content: "\2261";
+    font: rem(32px) 'Arial';
+    color: #fff;
+    display: none;
+    cursor: pointer;
+
+    @include tablets {
+        display: block;
+    }
+}

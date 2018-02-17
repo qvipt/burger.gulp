@@ -1,0 +1,22 @@
+// configs
+
+@import "./_misc/mixins.scss";
+@import "./_misc/vars.scss";
+@import "./_misc/fonts.scss";
+@import "./_misc/layout.scss";
+
+// sections
+
+@import "./blocks/common.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/best.scss";
+@import "./blocks/team.scss";
+@import "./blocks/review.scss";
+@import "./blocks/order.scss";
+@import "./blocks/fixed.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/menu-toggle.scss";
+@import "./blocks/menu-consist.scss";
+@import "./blocks/menu-burger.scss";
+

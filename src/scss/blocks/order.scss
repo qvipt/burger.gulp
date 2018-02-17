@@ -1,0 +1,105 @@
+.order  {
+    background: url('../img/bg/order_bg.png') center center no-repeat;
+    background-size: cover;
+}
+
+.form {
+    display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }    
+}
+
+.container-order {
+    @include tablets {
+        max-width: 472px;
+    }
+}
+
+
+.form__left, .form__right {
+    width: 50%;
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.form__right {
+    margin-left: rem(20px);
+    @include tablets {
+        margin-left: 0;
+    }
+}
+
+
+.form__row {
+    display: flex;   
+    align-items: center; 
+    margin-bottom: rem(20px);
+    
+    @include phones {
+        justify-content: center;
+    }
+}
+
+.form__block {
+    width: 100%;
+    margin-right: rem(20px); 
+    
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.form__block-flex {
+    display: flex;
+    align-items: center;
+    margin-right: rem(20px);    
+}
+
+.form__title {
+    color: #fff;
+    font-size: rem(13px);
+    font-weight: 700;
+    margin-bottom: rem(3px);
+}
+
+.form__input {
+    border: none;
+    padding: rem(10px);
+    border-radius: rem(5px);
+    width: 100%;
+}
+
+.form__textarea {
+    border: 0;
+    height: rem(118px);
+    width: 100%;
+    border-radius: rem(5px);
+}
+
+.form__radio {
+    margin-right: rem(5px);
+}
+
+.form__checkbox {
+    margin-right: rem(5px);
+}
+
+.form__orderbtn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: rem(13px);
+    color: #fff;
+    padding: rem(9px) rem(14px);
+    background: $orange;
+    border-radius: rem(5px);
+}
+
+.form__clearbtn {
+    margin-left: rem(18px);
+    color: #fff;
+    text-decoration: none;
+}
