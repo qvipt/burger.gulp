@@ -23,6 +23,7 @@
         .review__content {
             opacity: 1;
         }
+
     }
 
     @include tablets {
@@ -59,6 +60,10 @@
 .review__text {
     color: white;
     margin-bottom: rem(18px);
+
+    @include phones {
+        display: none;
+    }
 }
 
 .review__more {

@@ -134,8 +134,12 @@ function setEventsOnePagerjQuery() {
         }
 
         const scrollTo = $(e.currentTarget).attr('scrollTo');
-        console.log(scrollTo);
+       // console.log(scrollTo);
         gotoSection(scrollTo);
+    });
+
+    $('.arrowdown').on('click', e => {
+        scroll('down');
     });
 
 }
@@ -187,10 +191,24 @@ function setReviewBox() {
         $('.review__msg-bg').css('display', 'none');        
     });
 }
+function setTeamAcco() {
+    $('.team__acco-trigger').on('click', e => {
+        e.preventDefault;
+
+       // console.log('trigger');
+
+        var item = $(e.currentTarget).parent();
+
+        $('.team__acco-item').not(item).removeClass('team__acco-item--active');
+
+        item.addClass('team__acco-item--active');        
+    })
+}
 
 setEventsSlider();
 setEventsOnePagerjQuery();
 setEventsMenu();
 setYandexMap();
 setReviewBox();
+setTeamAcco();
 

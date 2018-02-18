@@ -8,6 +8,12 @@
     background: #fff;
     border-radius: 1%;
     transform: translate(-50%, -50%);
+
+
+    @include phones {
+        width: 350px;
+        height: 280px;
+    }    
 }
 
 .review__msg-bg {
@@ -35,8 +41,8 @@
 .reviewbox__content {
     margin-left: 16px;
     margin-top: 30px;
-    width: 426px;
-    height: 210px;
+    width: 80%;
+    height: 80%;
     margin: auto;
 }
 
