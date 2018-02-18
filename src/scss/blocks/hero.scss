@@ -125,6 +125,7 @@
 }
 
 .section__title--wedo {
+    margin-top: rem(60px);
     white-space: nowrap;
     @include laptops {
         font-size: rem(65px);

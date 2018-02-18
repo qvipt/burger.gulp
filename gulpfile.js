@@ -6,6 +6,7 @@ const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const groupMediaQueries = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-cleancss');
+//const unCSS = require('gulp-uncss');
 
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -31,6 +32,7 @@ function styles() {
     .pipe(sass()) // { outputStyle: 'compressed' }
     .pipe(groupMediaQueries())
     .pipe(cleanCSS())
+//    .pipe(unCSS())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest(paths.build + 'css/'))
@@ -66,8 +68,8 @@ function clean() {
 }
 
 function watch() {
-  gulp.watch(paths.src + 'scss/*.scss', styles);
-  gulp.watch(paths.src + 'js/*.js', scripts);
+  gulp.watch(paths.src + 'scss/**/*.scss', styles);
+  gulp.watch(paths.src + 'js/**/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + '{fonts,img}/**/*.*', copyStatic);
 }

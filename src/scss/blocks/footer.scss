@@ -1,0 +1,59 @@
+.footer {
+    display: flex;
+    height: 58px;
+    background: #000;
+}
+
+.left, .right {
+    width: 50%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(10px);
+    margin-left: rem(80px);
+    justify-content: center;
+    width: 100%;
+}
+
+.contact__addr {
+    font-family: 'Ubuntu';
+    font-size: rem(14px);
+    font-weight: 300;
+    color: #fff;
+}
+
+.contact__tel {
+    padding-top: 3px;
+    font-family: 'Ubuntu';
+    font-size: rem(14px);
+    font-weight: 900;    
+    color: #e45028
+}
+
+.right {
+    color: #fff;
+}
+
+.socials {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: rem(80px);    
+    height: 100%;
+}
+
+.social__item {
+    padding-right: rem(10px);
+}
+
+.social__link--icon {
+    height: 20px;
+    width: 20px;
+    opacity: .3;
+
+    &:hover {
+        opacity: 1;
+    }
+}

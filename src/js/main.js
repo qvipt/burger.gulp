@@ -68,7 +68,7 @@ function setEventsOnePagerjQuery() {
     let isScroll = false;
 
     const gotoSection = secNumber => {
-       // console.log(secNumber);
+        // console.log(secNumber);
 
         const position = `${secNumber * -100}%`;
 
@@ -112,15 +112,15 @@ function setEventsOnePagerjQuery() {
             if (delta > 0) scroll('down');
             if (delta < 0) scroll('up');
         },
-        keydown: e=> {
+        keydown: e => {
             switch (e.keyCode) {
-                case 38: 
+                case 38:
                     scroll('up');
                     break;
-                case 40: 
+                case 40:
                     scroll('down');
                     break;
-            }                        
+            }
         }
     });
 
@@ -129,10 +129,10 @@ function setEventsOnePagerjQuery() {
 
         if ($(e.currentTarget).hasClass('burger-menu-item')) {
             $('#burgerMenu').css({
-                'display' : 'none'
+                'display': 'none'
             });
         }
-        
+
         const scrollTo = $(e.currentTarget).attr('scrollTo');
         console.log(scrollTo);
         gotoSection(scrollTo);
@@ -143,7 +143,7 @@ function setEventsOnePagerjQuery() {
 function setEventsMenu() {
     $('.menu__link').on('click', e => {
         e.preventDefault;
-        
+
         var item = $(e.currentTarget).parent().siblings('.menu__acco-content');
 
         $('.menu__acco-content').not(item).removeClass('menu__acco-content--active');
@@ -152,6 +152,45 @@ function setEventsMenu() {
     });
 }
 
+function setYandexMap() {
+    ymaps.ready(init);
+    var myMap;
+
+    function init() {
+        myMap = new ymaps.Map("mapID", {
+            center: [59.91817154, 30.30557800],
+            controls: ['zoomControl'],
+            zoom: 12
+        });
+
+        myMap.behaviors.disable('scrollZoom');
+
+        var myPlacemark1 = new ymaps.Placemark([59.93121219, 30.25786075], {
+            balloonContent: 'Бегом сюда!'
+        }, {
+                iconLayout: 'default#image',
+                iconImageHref: '../img/svg/map-marker.svg'
+            });
+        myMap.geoObjects.add(myPlacemark1);
+
+    }
+}
+
+function setReviewBox() {
+    $('.review__more').on('click', e => {
+        e.preventDefault;
+        $('.review__msg-bg').css('display', 'block');        
+    });
+    
+    $('.close__link').on('click', e => {
+        e.preventDefault;
+        $('.review__msg-bg').css('display', 'none');        
+    });
+}
+
 setEventsSlider();
 setEventsOnePagerjQuery();
 setEventsMenu();
+setYandexMap();
+setReviewBox();
+
