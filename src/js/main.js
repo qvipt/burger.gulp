@@ -134,7 +134,7 @@ function setEventsOnePagerjQuery() {
         }
 
         const scrollTo = $(e.currentTarget).attr('scrollTo');
-       // console.log(scrollTo);
+        // console.log(scrollTo);
         gotoSection(scrollTo);
     });
 
@@ -183,26 +183,47 @@ function setYandexMap() {
 function setReviewBox() {
     $('.review__more').on('click', e => {
         e.preventDefault;
-        $('.review__msg-bg').css('display', 'block');        
+        $('.review__msg-bg').css('display', 'block');
     });
-    
+
     $('.close__link').on('click', e => {
         e.preventDefault;
-        $('.review__msg-bg').css('display', 'none');        
+        $('.review__msg-bg').css('display', 'none');
     });
 }
 function setTeamAcco() {
     $('.team__acco-trigger').on('click', e => {
         e.preventDefault;
 
-       // console.log('trigger');
+        // console.log('trigger');
 
         var item = $(e.currentTarget).parent();
 
         $('.team__acco-item').not(item).removeClass('team__acco-item--active');
 
-        item.addClass('team__acco-item--active');        
+        item.addClass('team__acco-item--active');
     })
+}
+
+function setFormEvents() {
+    $('.form__clearbtn').on('click', e => {
+        e.preventDefault;
+        $('#orderForm')[0].reset();
+    });
+
+    $('.form__orderbtn').on('click', e => {
+        e.preventDefault;
+        $.ajax('server.php', {
+            type: "POST",
+            data: $('#orderForm').serialize()
+        })
+            .done(function (data) {
+                alert('SUCCESS');
+            })
+            .fail(function (data) {
+                alert('FAIL');
+            })
+    });
 }
 
 setEventsSlider();
@@ -211,4 +232,6 @@ setEventsMenu();
 setYandexMap();
 setReviewBox();
 setTeamAcco();
+setFormEvents();
+
 

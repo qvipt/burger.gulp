@@ -34,6 +34,7 @@
 .menu__acco--item {
     background: rgba(#4c4e50, .7);    
     width: 80px;
+    background-size: cover;
 }
 
 .menu__link {
@@ -56,6 +57,9 @@
     
     &--active {
         width: 530px;
+        @include phones {
+            width: 170px;
+        }
     }
 }
 
@@ -64,5 +68,9 @@
     color: #fff;
     padding: 60px 30px;
     width: 475px;
+
+    @include phones {
+        width: 150px;
+    }
    // display: none;    
 }

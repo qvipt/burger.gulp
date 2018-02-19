@@ -6,6 +6,19 @@
 .section__title--order {
     margin-top: rem(90px);
     margin-bottom: rem(70px);
+
+    @include tablets {
+        margin-top: rem(50px);
+        margin-bottom: rem(40px);
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }    
+
+    @include phones {
+        margin-top: rem(50px);
+        margin-bottom: rem(40px);
+    }
 }
 
 .form {
