@@ -57,6 +57,11 @@
     
     &--active {
         width: 530px;
+
+        @include tablets {
+            width: 245px;
+        }
+
         @include phones {
             width: 170px;
         }
@@ -68,6 +73,10 @@
     color: #fff;
     padding: 60px 30px;
     width: 475px;
+
+    @include tablets {
+        width: 220px;
+    }
 
     @include phones {
         width: 150px;
